@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.my_graduation.mapper.UserMapper">
+    <select id="findAll" resultType="User">
+        select * from user
+    </select>
+    <insert id="addUser" parameterType="user">
+        insert into user(u_tel,u_name,u_openid,u_email,u_password,u_sex,u_institutions,u_area)
+        VALUES (#{u_tel},#{u_name},#{u_openid},#{u_email},#{u_password},#{u_sex},#{u_institutions},#{u_area})
+    </insert>
+    <select id="findByName" resultType="User">
+        select * from user where u_name=#{u_name}
+    </select>
+</mapper>
